@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 5;
+    padding: 10px 20px;
+    background-color: #6C60D3;
+    color: white;
+    border-radius: 20px;
+}
+
+.col1{
+
+}

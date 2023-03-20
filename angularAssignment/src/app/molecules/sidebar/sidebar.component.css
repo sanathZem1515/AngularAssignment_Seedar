@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20;
+  background-color: #222124;
+  justify-content: space-between;
+  width: 250px;
+  padding: 0 25px;
+  height: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.seedarText {
+  color: white;
+}
+
+.endTitle {
+  color: white;
+}
