@@ -1,2 +1,13 @@
-<app-header></app-header>
-<app-congratulations></app-congratulations>
+<div class="root">
+  <app-header></app-header>
+  <div class="notifications">
+    <app-congratulations style="width: 60%;"></app-congratulations>
+    <app-launch style="width: 40%;"></app-launch>
+  </div>
+
+  <div class="payments">
+    <h3 class="text">Your payments</h3>
+    <app-table [displayedColumns]="displayColumns" [headingColumns]="headingsColumns"></app-table>
+  </div>
+
+</div>
