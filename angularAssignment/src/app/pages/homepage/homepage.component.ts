@@ -12,10 +12,13 @@ export class HomepageComponent {
     'Expected amount',
     'Outstanding',
   ];
+
   headingsColumns: string[] = [
     'dueDate',
     'status',
     'expectedAmount',
     'outstanding',
   ];
+
+  data = []
 }

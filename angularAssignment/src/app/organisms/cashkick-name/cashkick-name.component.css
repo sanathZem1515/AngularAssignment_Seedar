@@ -1,0 +1,20 @@
+.root {
+    background-color: #262529;
+    width: 600px;
+    height: 320px;
+    padding: 20px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.flexEnd {
+    justify-content: flex-end;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 2px;
+}
+
+.mdc-text-field--filled , .mdc-text-field{
+    background-color: #262529;
+}

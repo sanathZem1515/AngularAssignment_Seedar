@@ -3,3 +3,19 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 
 Gilroy, "Helvetica Neue", sans-serif; }
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    color: white;
+}

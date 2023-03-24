@@ -2,7 +2,7 @@
   width: 100%;
   margin-top: 40px;
   background-color: #28272B;
-  min-height: 300px;
+  justify-content: flex-start;
 }
 
 .mat-mdc-row .mat-mdc-cell {
@@ -27,3 +27,9 @@
 th{
   color: white;
 }
+
+.mat-mdc-row  {
+  height:80px
+}
+
+

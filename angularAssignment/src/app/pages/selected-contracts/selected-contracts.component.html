@@ -1,0 +1,15 @@
+<div class="root">
+
+  <app-header heading="Good afternoon" caption="April 02,2021"></app-header>
+
+  <p (click)="onBack()"> Back </p>
+
+  <div class="row div1">
+    <div class="payments" style="width: 70%;height: 100%;">
+      <h3 class="text">Your Contracts</h3>
+      <app-table [displayedColumns]="displayColumns" [headingColumns]="headingsColumns" [dataSource]="data" ></app-table>
+    </div>
+
+    <app-summary style="width: 30%;" [sliderAvailable]="false" [buttonName]="'Submit Your Credit'" [sliderAvailable]="false" (handleButton)="onClick()"></app-summary>
+  </div>
+</div>

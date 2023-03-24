@@ -1,0 +1,22 @@
+<div class="col root">
+  <div class="row">
+    <div class="col">
+      <h2>Name your cash kick</h2>
+      <p>Add a name to identify your cash kick</p>
+    </div>
+    <!-- icon -->
+  </div>
+
+  <div class="col">
+    <p>Cash kick name</p>
+    <mat-form-field>
+      <mat-label>Ex: marketing expenses</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="row flexEnd">
+    <app-button [name]="'Cancel'" mat-dialog-close></app-button>
+    <app-button [name]="'Create Cash Kick'" (click)="onCreate()"></app-button>
+  </div>
+</div>

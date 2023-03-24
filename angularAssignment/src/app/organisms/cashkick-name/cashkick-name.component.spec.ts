@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LaunchComponent } from './launch.component';
+import { CashkickNameComponent } from './cashkick-name.component';
 
-describe('LaunchComponent', () => {
-  let component: LaunchComponent;
-  let fixture: ComponentFixture<LaunchComponent>;
+describe('CashkickNameComponent', () => {
+  let component: CashkickNameComponent;
+  let fixture: ComponentFixture<CashkickNameComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LaunchComponent ]
+      declarations: [ CashkickNameComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LaunchComponent);
+    fixture = TestBed.createComponent(CashkickNameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
