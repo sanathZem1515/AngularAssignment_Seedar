@@ -1,11 +1,10 @@
-import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
-import { Contract } from "../modal/contract.model";
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Contract } from '../modal/contract.model';
 
 @Injectable({ providedIn: 'root' })
 export class ContractsService {
   contractsChanged = new Subject<Contract[]>();
-
   selectedContractsChanged = new Subject<Contract[]>();
 
   private contracts: Contract[] = [];

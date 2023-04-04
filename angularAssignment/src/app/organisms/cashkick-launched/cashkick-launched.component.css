@@ -1,8 +1,8 @@
 .root {
   background-color: #262529;
   width: 600px;
-  height: 480px;
-  padding: 20px;
+  height: 550px;
+  padding: 30px;
   justify-content: space-between;
   overflow: hidden;
 }

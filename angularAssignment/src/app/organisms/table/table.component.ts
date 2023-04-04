@@ -1,6 +1,7 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Contract } from 'src/app/modal/contract.model';
 import { ContractsService } from 'src/app/services/contracts.service';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 
@@ -25,22 +26,39 @@ export class TableComponent implements OnInit {
 
   checked: boolean = false;
 
-  clickedRows = new Set<any>();
+  clickedRows = new Set<Contract>();
 
-  selection = new SelectionModel<any>(true, []);
+  selection = new SelectionModel<Contract>(true, []);
 
   ngOnInit(): void {
-    if (this.router.url === '/newCashKick') {
-      this.dataStorageService.fetchContracts().subscribe();
-    } else {
-      this.dataStorageService.fetchSelectedContracts().subscribe();
-    }
+      // this.dataStorageService.fetchContracts().subscribe();
+      // this.dataStorageService.fetchSelectedContracts().subscribe();
 
     if (this.checkboxAvailable) {
       this.displayedColumns1 = ['select', ...this.displayedColumns];
     } else {
       this.displayedColumns1 = [...this.displayedColumns];
     }
+
+    console.log(
+      'selected contracts',
+      this.contractsService.getSelectedContracts()
+    );
+    console.log('contracts ', this.contractsService.getContracts());
+    // console.log(this.clickedRows.has());
+
+    let rows = [];
+
+    for (let i = 0; i < this.dataSource.length; i++) {
+      let selCons = this.contractsService.getSelectedContracts();
+      for (let j = 0; j < selCons.length; j++) {
+        if (this.dataSource[i].name === selCons[j].name) {
+          rows.push(this.dataSource[i]);
+        }
+      }
+    }
+
+    this.selection = new SelectionModel<Contract>(true, rows);
   }
 
   onRowClick(row: any) {
@@ -59,5 +77,9 @@ export class TableComponent implements OnInit {
       ? this.selection.clear()
       : this.dataSource.forEach((row) => this.selection.select(row));
     this.contractsService.setSelectedContracts(this.selection.selected);
+  }
+
+  getRows(dataSource: Contract[]) {
+    // rows = dataSource.filter(())
   }
 }

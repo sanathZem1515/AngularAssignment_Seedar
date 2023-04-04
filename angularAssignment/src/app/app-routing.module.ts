@@ -1,28 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CashkickNameComponent } from './organisms/cashkick-name/cashkick-name.component';
-import { CashAcclerationComponent } from './pages/cash-accleration/cash-accleration.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { NewCashKickPageComponent } from './pages/new-cash-kick-page/new-cash-kick-page.component';
 import { SelectedContractsComponent } from './pages/selected-contracts/selected-contracts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    component: HomepageComponent,
+    loadChildren: () =>
+      import('./pages/homepage/homepage.module').then((c) => c.HomePageModule),
   },
   {
     path: 'newCashKick',
-    component: NewCashKickPageComponent,
+    loadChildren: () =>
+      import('./pages/new-cash-kick-page/new-cash-kick-page.module').then(
+        (c) => c.NewCashKickPageModule
+      ),
   },
   {
     path: 'cashAccleration',
-    component: CashAcclerationComponent,
+    loadChildren: () =>
+      import('./pages/cash-accleration/cash-accleration.module').then(
+        (m) => m.CashAccerationModule
+      ),
   },
   {
     path: 'selectedContracts',
     component: SelectedContractsComponent,
+    loadChildren: () =>
+      import('./pages/selected-contracts/selected-contracts.module').then(
+        (m) => m.SelectedContractsModule
+      ),
   },
   {
     path: 'cashkickName',
@@ -36,9 +43,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-
-
- }
+export class AppRoutingModule {}

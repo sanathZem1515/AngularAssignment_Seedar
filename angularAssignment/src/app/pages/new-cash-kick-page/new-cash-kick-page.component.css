@@ -26,3 +26,13 @@
 .div1 {
     margin-top: 40px;
 }
+
+.prev {
+    align-items: center;
+    background-color: #28272B;
+    width:80px;
+    padding: 5px;
+    border-radius: 20px;
+    margin-top: 50px;
+    cursor: pointer;
+}

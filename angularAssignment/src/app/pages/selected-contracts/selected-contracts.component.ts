@@ -5,28 +5,31 @@ import { Subscription } from 'rxjs';
 import { Contract } from 'src/app/modal/contract.model';
 import { CashkickNameComponent } from 'src/app/organisms/cashkick-name/cashkick-name.component';
 import { ContractsService } from 'src/app/services/contracts.service';
-import { ELEMENT_DATA } from 'src/app/store/constants';
+import { DataStorageService } from 'src/app/services/data-storage.service';
 
 @Component({
   selector: 'app-selected-contracts',
   templateUrl: './selected-contracts.component.html',
   styleUrls: ['./selected-contracts.component.css'],
 })
-export class SelectedContractsComponent implements OnInit,OnDestroy {
+export class SelectedContractsComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     public dialog: MatDialog,
-    private contractsService: ContractsService
+    private contractsService: ContractsService,
+    private dataStorageService: DataStorageService
   ) {}
 
-  sub: Subscription = new Subscription;
+  sub: Subscription = new Subscription();
 
-  data: Contract[] = this.contractsService.getSelectedContracts();
+  data: Contract[] = [];
 
   ngOnInit(): void {
-    this.sub = this.contractsService.selectedContractsChanged.subscribe((selectedCon) => {
-      this.data = selectedCon;
-    });
+    this.dataStorageService.fetchSelectedContracts().subscribe(data=>{
+      console.log(data," inside ");
+      this.data = data;
+    })
+    // this.data=this.contractsService.getSelectedContracts();
   }
 
   displayColumns: string[] = [
@@ -55,6 +58,6 @@ export class SelectedContractsComponent implements OnInit,OnDestroy {
   }
 
   ngOnDestroy(): void {
-      this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 }

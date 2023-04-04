@@ -1,17 +1,22 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Contract } from 'src/app/modal/contract.model';
 import { ContractsService } from 'src/app/services/contracts.service';
 import { DataStorageService } from 'src/app/services/data-storage.service';
-import { dataContracts } from 'src/app/store/constants';
 
 @Component({
   selector: 'app-new-cash-kick-page',
   templateUrl: './new-cash-kick-page.component.html',
   styleUrls: ['./new-cash-kick-page.component.css'],
 })
-export class NewCashKickPageComponent implements OnInit,OnDestroy{
+export class NewCashKickPageComponent implements OnInit, OnDestroy {
   @Output() clickEmit = new EventEmitter<void>();
   sub: Subscription = new Subscription();
 
@@ -24,6 +29,8 @@ export class NewCashKickPageComponent implements OnInit,OnDestroy{
   data: Contract[] = [];
 
   ngOnInit(): void {
+    this.dataStorageService.fetchContracts().subscribe();
+    this.dataStorageService.fetchSelectedContracts().subscribe();
     this.sub = this.contractsService.contractsChanged.subscribe((contracts) => {
       this.data = [...contracts];
     });
@@ -46,13 +53,11 @@ export class NewCashKickPageComponent implements OnInit,OnDestroy{
   ];
 
   onClick() {
-    this.router.navigate(['selectedContracts']);
-
-    console.log(this.contractsService.getSelectedContracts());
-
-    this.dataStorageService.storeSelectedContracts(
-      this.contractsService.getSelectedContracts()
-    );
+    this.dataStorageService
+      .storeSelectedContracts(this.contractsService.getSelectedContracts())
+      .subscribe((data) => {
+        this.router.navigate(['selectedContracts']);
+      });
   }
 
   onBack() {
@@ -60,6 +65,6 @@ export class NewCashKickPageComponent implements OnInit,OnDestroy{
   }
 
   ngOnDestroy(): void {
-      this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 }

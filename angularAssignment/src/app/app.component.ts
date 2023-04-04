@@ -9,9 +9,8 @@ import { dataContracts } from './store/constants';
 })
 export class AppComponent implements OnInit {
   title = 'angularAssignment';
-  menus: string[] = ['Home', 'Cash Accleration'];
 
-  // constructor(private dataStorageService: DataStorageService) {}
+  constructor(private dataStorageService: DataStorageService) {}
 
   ngOnInit() {
     // this.dataStorageService.fetchContracts().subscribe();

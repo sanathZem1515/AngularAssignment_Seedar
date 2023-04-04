@@ -1,21 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 
-Gilroy, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Gilroy, "Helvetica Neue", sans-serif;
+}
 
 .col {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
-h1,h2,h3,h4,h5,h6,p {
-    color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: white;
+  margin: 10px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.4px;
+}
+
+.body1 {
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+}
+
+.heading1 {
+  font-family: Gilroy;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.005em;
+  text-align: left;
+}
+
+.heading2 {
+  font-family: Gilroy;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: -0.005em;
+}
+
+.heading3 {
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+}
+
+.button1 {
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.title {
+  font-family: Gilroy;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.015em;
+}
+
+.grey {
+  color: #a5a5a6;
 }
