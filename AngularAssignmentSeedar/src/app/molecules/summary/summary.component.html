@@ -1,0 +1,35 @@
+<div class="root">
+  <h3>Summary</h3>
+
+  <div class="row space-between">
+    <p>Term</p>
+    <p><b>12 months</b></p>
+  </div>
+  <div class="row space-between">
+    <p>Selected contracts</p>
+    <p><b>{{selectedContracts}}</b></p>
+  </div>
+
+  <app-slider *ngIf="sliderAvailable" [min]="0" [max]="totalAmounts" [value]="selectedTotalAmount"></app-slider>
+
+  <div class="row space-between">
+    <p>Pay back amount</p>
+    <p><b>$0.00</b></p>
+  </div>
+
+  <div class="row space-between">
+    <p>Rate %</p>
+    <p>(0.00%)<b>$0.00</b></p>
+  </div>
+
+  <hr>
+
+  <div class="row space-between">
+    <p>Total Payable</p>
+    <p><b>$0.00</b></p>
+  </div>
+
+  <app-button name={{buttonName}}
+    style1="color:white;padding: 10px;background-color: #6C5DD3;border-radius: 10px;margin-top: 40px;height:60px;width:100%"
+    (click)="onClick()"></app-button>
+</div>

@@ -1,0 +1,12 @@
+<div class="root">
+  <app-header heading="Good afternoon" caption="April 02,2021"></app-header>
+  <div class="notifications">
+    <app-congratulations style="width: 60%;"></app-congratulations>
+    <app-launch style="width: 40%;"></app-launch>
+  </div>
+
+  <div class="payments">
+    <h3 class="text">Your payments</h3>
+    <app-table [displayedColumns]="displayColumns" [headingColumns]="headingsColumns" [dataSource]="data"></app-table>
+  </div>
+</div>

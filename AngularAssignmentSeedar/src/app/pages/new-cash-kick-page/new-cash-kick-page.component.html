@@ -1,0 +1,17 @@
+<div class="root">
+
+  <app-header heading="New Cash kick" caption="Let's setup a new cash kick to power your Saas"></app-header>
+
+  <p (click)="onBack()" class="row prev">
+    <mat-icon>arrow_back</mat-icon> Back
+  </p>
+
+  <div class="row div1">
+    <div class="payments" style="width: 70%;height: 100%;">
+      <h3 class="text">Your Contracts</h3>
+      <app-table [displayedColumns]="displayColumns" [headingColumns]="headingsColumns" [dataSource]="data"
+        [checkboxAvailable]="true"></app-table>
+    </div>
+    <app-summary style="width: 30%;" (handleButton)="onClick()" [buttonName]="'Review Your Credit'"></app-summary>
+  </div>
+</div>

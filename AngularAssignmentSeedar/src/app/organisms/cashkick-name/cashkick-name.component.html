@@ -1,0 +1,29 @@
+<div class="col root">
+  <div class="row space-between">
+    <div class="col ">
+      <h2 class="heading1">Name your cash kick</h2>
+      <p class="heading3 grey">Add a name to identify your cash kick</p>
+    </div>
+    <mat-icon style="color: white;" mat-dialog-close>close</mat-icon>
+
+  </div>
+  <form (ngSubmit)="onCreate()" #f="ngForm">
+
+    <div class="col">
+      <p class="body1 grey">Cash kick name</p>
+      <mat-form-field>
+        <mat-label for="cashKickName">Ex: marketing expenses</mat-label>
+        <input matInput name="cashKickName" ngModel required>
+      </mat-form-field>
+    </div>
+
+    <div class="row flexEnd">
+      <app-button [name]="'Cancel'" mat-dialog-close
+        style1="color:white;padding: 10px;background-color: #2D2D30;height:60px;min-width:100px"></app-button>
+
+      <app-button [name]="'Create Cash Kick'" [type]="'submit'" [disabled]="!f.valid"
+        style1="color:white;padding: 10px;background-color: #6C5DD3;height:60px"></app-button>
+    </div>
+  </form>
+
+</div>

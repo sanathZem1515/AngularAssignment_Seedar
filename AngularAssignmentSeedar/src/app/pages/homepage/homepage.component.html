@@ -1,0 +1,13 @@
+<div class="root">
+  <app-header heading="Good afternoon" caption="April 02,2021"></app-header>
+  <div class="notifications">
+    <app-congratulations style="width: 70%;"></app-congratulations>
+    <app-launch style="width: 30%;"></app-launch>
+  </div>
+
+  <div class="payments col">
+    <h3 class="text">Your payments</h3>
+    <app-table [displayedColumns]="displayColumns" [headingColumns]="headingsColumns" [dataSource]="[]"></app-table>
+    <img src="./../../../assets/Cheque 3D Illustration 1.svg" alt="">
+  </div>
+</div>

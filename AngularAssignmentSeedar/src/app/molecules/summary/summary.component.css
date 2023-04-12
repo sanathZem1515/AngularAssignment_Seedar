@@ -1,0 +1,17 @@
+.root {
+  background-color: #28272b;
+  border-radius: 10px;
+  padding: 20px;
+  gap:0;
+  height: 100%;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+
+p,h3 {
+    color: white;
+}
+
