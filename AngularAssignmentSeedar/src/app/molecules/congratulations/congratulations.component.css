@@ -1,0 +1,16 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 5;
+    padding: 10px 20px;
+    background-color: #6C60D3;
+    color: white;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.col1{
+    width:300px;
+    padding: 10px;
+    gap:5px;
+}

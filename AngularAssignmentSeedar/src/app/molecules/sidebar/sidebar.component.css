@@ -1,0 +1,45 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20;
+  background-color: #222124;
+  justify-content: space-between;
+  width: 250px;
+  padding: 0 25px;
+  height: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.seedarText {
+  color: white;
+}
+
+.endTitle {
+  color: white;
+}
+
+.router-link-active {
+  background-color: #2d2d30 !important;
+}
+
+.button1 {
+  color: white;
+  background-color: #222124;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+img {
+  width:25px;
+  height:25px
+}
+
+.head {
+  align-items: center;
+  margin-bottom:40px;
+}

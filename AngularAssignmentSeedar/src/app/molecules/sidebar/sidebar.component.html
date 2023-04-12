@@ -1,0 +1,17 @@
+  <div class="root">
+    <div class="row head">
+      <img src="./../../../assets/Vector.svg" alt="">
+      <h2 class="seedarText">Seedar</h2>
+    </div>
+
+
+    <div class="buttons">
+      <!-- style="color: white;background-color: #222124;margin: 20px 0;border-radius: 10px;" -->
+
+      <app-button *ngFor="let menu of menus" [name]="menu.name" [iconName]="menu.iconName" class="button1"
+        style="color:white" style1="color:white" [routerLink]="[menu.routeTo]" routerLinkActive="router-link-active">
+      </app-button>
+    </div>
+
+    <p class="endTitle">Watch how to</p>
+  </div>

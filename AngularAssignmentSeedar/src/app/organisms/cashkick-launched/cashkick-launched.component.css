@@ -1,0 +1,30 @@
+.root {
+  background-color: #262529;
+  width: 600px;
+  height: 550px;
+  padding: 30px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 2px;
+}
+
+.align {
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.buttons {
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 30px;
+}

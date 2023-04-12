@@ -1,0 +1,9 @@
+   <div class="row space-between">
+     <p>Slice to autoselect</p>
+     <p>Reset</p>
+   </div>
+   <mat-slider class="root" [disabled]="disabled" [max]="max" [min]="min" [step]="step" [discrete]="thumbLabel"
+     [showTickMarks]="showTicks">
+     <input matSliderThumb [(ngModel)]="value">
+   </mat-slider>
+   <p>${{value}}.00 selected of ${{max}}.00</p>
